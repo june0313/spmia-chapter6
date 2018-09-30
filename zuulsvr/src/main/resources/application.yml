@@ -24,38 +24,6 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 zuul:
-#  ignored-services: "*"
-  prefix: /api
+  prefix:  /api
   routes:
-#    licensestatic:
-#      path: /licensestatic/**
-#      url:  http://licenseservice-static:8081
-#      serviceId: licensestatic
     organizationservice: /organization/**
-    licensingservice: /licensing/**
-    authenticationservice: /auth/**
-#zuul.prefix:  /api
-#zuul.routes.organizationservice: /organization/**
-#zuul.routes.licensingservice: /licensing/**
-#zuul.routes.authenticationservice: /auth/**
-#zuul.routes.licensestatic.path: /licensestatic/**
-#zuul.routes.licensestatic.url:  http://licenseservice-static:8081
-#zuul.routes.licensestatic.serviceId: licensestatic
-#zuul.routes.licensestatic.ribbon.listOfServers: http://licenseservice-static1:8081, http://licenseservice-static2:8082
-#ribbon.eureka.enabled: false
-  sensitiveHeaders: Cookie,Set-Cookie
-  debug:
-    request: true
-
-#ribbon:
-#  eureka:
-#    enabled: false
-
-#licensestatic:
-#  ribbon:
-#    listOfServers: http://licenseservice-static1:8081, http://licenseservice-static2:8082
-
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2500
-#hystrix.command.licensingservice.execution.isolation.thread.timeoutInMilliseconds: 2
-#licensingservice.ribbon.ReadTimeout: 2
-signing.key: "345345fsdfsf5345"
